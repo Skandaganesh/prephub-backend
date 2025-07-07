@@ -17,7 +17,7 @@ async function getOGImage(url) {
 }
 
 // POST /add - Add internship
-router.post('/add', async (req, res) => {
+router.post('/addinternshipopening', async (req, res) => {
   try {
     const { title, description, ctc, link, location } = req.body;
 
