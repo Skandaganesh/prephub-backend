@@ -49,6 +49,28 @@ router.post('/addinternshipopening', async (req, res) => {
 });
 
 // GET / - All internships
+// Serve OG meta for /internship frontend route
+router.get('/internship-og', (req, res) => {
+    res.send(`
+      <html>
+        <head>
+          <meta property="og:title" content="Internships at PrepHub" />
+          <meta property="og:description" content="Explore the latest internship openings on PrepHub!" />
+          <meta property="og:image" content="https://prephub.netlify.app/dedicated-magento-developer.png" />
+          <meta property="og:url" content="https://prephub.netlify.app/internship" />
+          <meta property="og:type" content="website" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta http-equiv="refresh" content="0;url=https://prephub.netlify.app/internship" />
+          <title>Redirecting to Internships</title>
+        </head>
+        <body style="text-align:center;font-family:sans-serif;">
+          <p>Redirecting to internship listings…</p>
+          <a href="https://prephub.netlify.app/internship">Click here</a> if not redirected.
+        </body>
+      </html>
+    `);
+  });
+  
 router.get('/', async (req, res) => {
   const internships = await Internship.find().sort({ createdAt: -1 });
   res.json(internships);
@@ -65,7 +87,7 @@ router.get('/:id', async (req, res) => {
         <head>
           <meta property="og:title" content="${intern.title}" />
           <meta property="og:description" content="${intern.description}" />
-          <meta property="og:image" content="${intern.image || 'https://yourdomain.com/default.png'}" />
+          <meta property="og:image" content="${intern.image || ' https://prephub.netlify.app/dedicated-magento-developer.png'}" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta http-equiv="refresh" content="3;url=${intern.link}" />
