@@ -56,16 +56,16 @@ router.get('/internship-og', (req, res) => {
         <head>
           <meta property="og:title" content="Internships at PrepHub" />
           <meta property="og:description" content="Explore the latest internship openings on PrepHub!" />
-          <meta property="og:image" content="https://prephub.netlify.app/dedicated-magento-developer.png" />
-          <meta property="og:url" content="https://prephub.netlify.app/internship" />
+          <meta property="og:image" content="https://prephub.dev/dedicated-magento-developer.png" />
+          <meta property="og:url" content="https://prephub.dev/internship" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta http-equiv="refresh" content="0;url=https://prephub.netlify.app/internship" />
+          <meta http-equiv="refresh" content="0;url=https://prephub.dev/internship" />
           <title>Redirecting to Internships</title>
         </head>
         <body style="text-align:center;font-family:sans-serif;">
           <p>Redirecting to internship listings…</p>
-          <a href="https://prephub.netlify.app/internship">Click here</a> if not redirected.
+          <a href="https://prephub.dev/internship">Click here</a> if not redirected.
         </body>
       </html>
     `);
@@ -87,7 +87,7 @@ router.get('/:id', async (req, res) => {
         <head>
           <meta property="og:title" content="${intern.title}" />
           <meta property="og:description" content="${intern.description}" />
-          <meta property="og:image" content="${intern.image || ' https://prephub.netlify.app/dedicated-magento-developer.png'}" />
+          <meta property="og:image" content="${intern.image || ' https://prephub.dev/dedicated-magento-developer.png'}" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta http-equiv="refresh" content="3;url=${intern.link}" />
